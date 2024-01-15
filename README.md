@@ -6,6 +6,4 @@ Done:
 * Implemented saving templates as new JSON
 * Implemented removing of elements
 * Implemented instantiating UI from the JSON data
-
-To DO:
-* Figure out a way to use the scrollbar when a new UI element is added
+* Fixed scrollbar issue
