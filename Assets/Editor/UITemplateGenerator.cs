@@ -17,11 +17,12 @@ public class UITemplateData
 [System.Serializable]
 public class UITemplateElementData
 {
-    public string elementName;
-    public Vector3 position;
-    public Vector3 rotation;
-    public Vector3 scale;
-    public Vector2 width_height;
+    public string elementName = "Element Name";
+    public Vector3 position = Vector3.zero;
+    public Vector3 rotation = Vector3.zero;
+    public Vector3 scale = Vector3.one;
+    public Vector2 width_height = new Vector2(100,100);
+
     public int parentIndex;
     public Sprite sprite;
     public string text;
@@ -82,7 +83,6 @@ public class UITemplateGenerator : EditorWindow
             if (GUILayout.Button("Add Element"))
             {
                 templateData.elements.Add(new UITemplateElementData());
-                //Repaint();
             }
 
             GUILayout.Space(20);
@@ -139,7 +139,7 @@ public class UITemplateGenerator : EditorWindow
         GUILayout.Space(10);
 
         EditorGUILayout.BeginHorizontal();
-        //GUILayout.FlexibleSpace();
+        GUILayout.FlexibleSpace();
 
         if (GUILayout.Button("Remove Element"))
         {
@@ -147,7 +147,8 @@ public class UITemplateGenerator : EditorWindow
         }
 
         EditorGUILayout.EndHorizontal();
-        EditorGUILayout.EndScrollView();
+        EditorGUILayout.EndVertical();
+        //EditorGUILayout.EndScrollView();
     }
 
     private string[] GetElementNames()
